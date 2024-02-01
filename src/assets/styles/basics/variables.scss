@@ -1,0 +1,17 @@
+$breakpoints: ( //em
+    'mobile-xxsmall': 17.5, //280px
+    'mobile-xsmall': 20, //320px
+    'mobile-small': 22.5, //360px
+    'mobile-default': 30, //480px
+    'mobile-large': 48, //768px //tablet portrait
+    'tablet-air-portrait': 51.25, //820px        
+    'tablet-default': 64, //1024px        //tablet pro portrait
+    'tablet-air-landscape': 73.75, //1180px        
+    'desktop-small': 80, //1280px
+    'tablet-pro-landscape': 85.38, //1366px
+    'desktop-default': 90, //1440px   
+    'desktop-medium': 100, //1600px    
+    'desktop-large': 120, //1920px    
+    'desktop-large2': 124, //1960px  
+    'desktop-xlarge': 160 //2560px    
+) !default;
