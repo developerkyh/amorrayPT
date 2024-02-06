@@ -1,12 +1,18 @@
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 
 import { history } from '_helpers';
-import { PrivateRoute } from '_components';
+import { Nav, Alert, PrivateRoute } from '_components';
 import { Home } from 'home';
-import { Login } from 'login';
+import { AccountLayout } from 'account';
+import { UsersLayout } from 'users';
 import { Top } from '_layout';
 
 export { App };
+
+
+if(process.env.REACT_APP_API_URL === 'debug'){
+    setDebugLevel(1)
+}
 
 function App() {
     // init custom history object to allow navigation from 
@@ -15,23 +21,21 @@ function App() {
     history.location = useLocation();
 
     return (
-        <div className="wrap">
-            <div className="app-container bg-light">
-                <Top />
-                <div className="container pt-4 pb-4">
-                    <Routes>
-                    <Route
-                            path="/"
-                            element={
-                                <PrivateRoute>
-                                    <Home />
-                                </PrivateRoute>
-                            }
-                        />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="*" element={<Navigate to="/" />} />
-                    </Routes>
-                </div>
+        <div className="app-container bg-light">
+            <Top />
+            <Nav />
+            <Alert />
+            <div className="container pt-4 pb-4">
+                <Routes>
+                    {/* private */}
+                    <Route element={<PrivateRoute />}>
+                        <Route path="/" element={<Home />} />
+                        <Route path="users/*" element={<UsersLayout />} />
+                    </Route>
+                    {/* public */}
+                    <Route path="account/*" element={<AccountLayout />} />
+                    <Route path="*" element={<Navigate to="/" />} />
+                </Routes>
             </div>
         </div>
     );
