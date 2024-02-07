@@ -1,6 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
@@ -34,11 +34,6 @@ module.exports = {
     publicPath: '/', // 파일들이 위치할 서버상의 경로
     filename: 'app.js',
     clean: true
-  },
-  resolve: {
-    modules: [
-      path.resolve(__dirname, 'src'), 'node_modules'],
-      extensions: ['.js', '.jsx','.scss','.html'],
   },
   module: {
     rules: [
@@ -86,11 +81,10 @@ module.exports = {
       filename: "css/[name].css",
       chunkFilename: "[id].css"
     }),
-    // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(process.cwd(), "./dist/index.html"),
-      filename: "./index.html",
-      inject: false, // index 주입 false
+      filename: "index.html",
+      inject: true, // index 주입 false
       hash: true,
       minify: { // (https://github.com/kangax/html-minifier)
         collapseWhitespace: false, // 문서 트리의 텍스트 노드에 공헌하는 공백 축소
@@ -98,10 +92,20 @@ module.exports = {
         removeComments: false // 주석
       }
     }),
+    /* new CopyPlugin({
+      patterns: [
+        // { from: 'public', to: '../'}
+        { from: 'public', to: '../dist/index.html'}
+      ],
+    }), */
     new webpack.DefinePlugin({
       'process.env.REACT_APP_API_URL': JSON.stringify(process.env.REACT_APP_API_URL),
     })
   ],
+  resolve: {
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    extensions: ['.js', '.jsx','.scss','.html'],
+  },
   externals: {
     // global app config object
     config: JSON.stringify({
