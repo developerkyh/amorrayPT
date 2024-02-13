@@ -21,7 +21,7 @@ function App() {
     history.location = useLocation();
 
     return (
-        <div className="app-container bg-light">
+        <div className="app-container">
             <Top />
             <Nav />
             <Alert />

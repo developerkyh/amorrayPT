@@ -32,6 +32,7 @@
         "react-redux": "^9.1.0",
         "react-router-dom": "^6.21.3",
         "react-scripts": "5.0.1",
+        "resolve-url-loader": "^5.0.0",
         "sass": "^1.70.0",
         "sass-loader": "^14.1.0",
         "style-loader": "3.3.1",
