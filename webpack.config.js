@@ -6,7 +6,9 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
-  stats: 'errors-warnings',
+  stats: {
+    children: true,
+  },
   devServer: {
     static: {
       directory: path.resolve(process.cwd(), "./dist/")
@@ -55,10 +57,10 @@ module.exports = {
               url: false,
             }
           },
-          {
-            loader: 'resolve-url-loader'
-          },
           /* {
+            loader: 'resolve-url-loader'
+          }, */
+          {
             loader: "postcss-loader",
             options: {
               postcssOptions: {
@@ -67,7 +69,7 @@ module.exports = {
                 ]
               }
             }
-          }, */ 
+          }, 
           {
             loader: 'sass-loader',
             options: {
@@ -88,7 +90,6 @@ module.exports = {
       filename: "index.html",
       inject: true, // index 주입 false
       hash: true,
-      cache: false, //이렇게 하면 변경될 때마다 템플릿이 다시 생성됩니다(그리고 웹팩 빌드 속도가 느려집니다).
       minify: { // (https://github.com/kangax/html-minifier)
         collapseWhitespace: false, // 문서 트리의 텍스트 노드에 공헌하는 공백 축소
         removeAttributeQuotes: false, // 따옴표

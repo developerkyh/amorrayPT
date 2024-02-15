@@ -4,31 +4,34 @@
 //  Table of Contents
 //
 //    1. Basics
-//    2. Page Layout
+//    2. Mixins
 //    3. Components
-//    4. Mixins
+//    4. Page Layout
 //---------------------------------------------
 
 //---------------------------------------------
-// 1. Basics
+// 1.Basics
 //---------------------------------------------
+@import "basics/font";
 @import "basics/base";
 @import "basics/variables";
+@import '~bootstrap/scss/bootstrap';
 
 
 //---------------------------------------------
-// 2. Page Layout
+// 2.Mixins
 //---------------------------------------------
-@import "_layout";
+
+@import "mixins/response";
+@import "mixins/setRem";
 
 //---------------------------------------------
 // 3.Components
 //---------------------------------------------
 
 
-//---------------------------------------------
-// 4.Mixins
-//---------------------------------------------
 
-@import "mixins/response";
-@import "mixins/response";
+//---------------------------------------------
+// 4.Page Layout
+//---------------------------------------------
+@import "_layout";

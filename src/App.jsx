@@ -23,7 +23,6 @@ function App() {
     return (
         <div className="app-container">
             <Top />
-            <Nav />
             <Alert />
             <div className="container pt-4 pb-4">
                 <Routes>

@@ -1,7 +1,7 @@
 export { fakeBackend };
 
 // array in local storage for registered users
-const usersKey = 'react-18-redux-registration-login-example-users';
+const usersKey = 'amorray-test-key';
 let users = JSON.parse(localStorage.getItem(usersKey)) || [];
 
 function fakeBackend() {
@@ -39,7 +39,7 @@ function fakeBackend() {
                 const { username, password } = body();
                 const user = users.find(x => x.username === username && x.password === password);
 
-                if (!user) return error('Username or password is incorrect');
+                if (!user) return error('사용자 이름 또는 암호가 올바르지 않습니다');
 
                 return ok({
                     ...basicDetails(user),

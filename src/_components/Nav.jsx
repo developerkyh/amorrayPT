@@ -14,7 +14,7 @@ function Nav() {
     if (!auth) return null;
     
     return (
-        <nav className="navbar navbar-expand navbar-dark bg-dark px-3">
+        <nav className="navbar navbar-expand px-1">
             <div className="navbar-nav">
                 <NavLink to="/" className="nav-item nav-link">Home</NavLink>
                 <NavLink to="/users" className="nav-item nav-link">Users</NavLink>

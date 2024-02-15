@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+body,
+div,
+nav,
 p,
 h1,
 h2,
@@ -26,7 +29,11 @@ button,
 select {
     margin: 0;
     padding: 0;
-    vertical-align: middle
+    vertical-align: middle;
+    font-family: Roboto, Noto Sans KR, Montserrat-Regular, Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #676767;
 }
 
 caption {
@@ -36,18 +43,6 @@ caption {
     overflow: hidden;
     clip: rect(1px 1px 1px 1px); //IE6, IE7
     clip: rect(1px, 1px, 1px, 1px);
-}
-
-body,
-nav,
-input,
-textarea,
-select,
-button,
-table {
-    font-family: Montserrat-Regular, Roboto, Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    color: #676767;
 }
 
 img,
