@@ -1,11 +1,13 @@
-import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import { history } from '_helpers';
-import { Nav, Alert, PrivateRoute } from '_components';
-import { Home } from 'home';
-import { AccountLayout } from 'account';
-import { UsersLayout } from 'users';
-import { Top } from '_layout';
+
+import { Top } from 'layout';
+import { LeftAside } from 'layout';
+import { RightAside } from 'layout';
+import { Main } from 'layout';
+import { Footer } from 'layout';
+
 
 export { App };
 
@@ -23,19 +25,10 @@ function App() {
     return (
         <div className="app-container">
             <Top />
-            <Alert />
-            <div className="container pt-4 pb-4">
-                <Routes>
-                    {/* private */}
-                    <Route element={<PrivateRoute />}>
-                        <Route path="/" element={<Home />} />
-                        <Route path="users/*" element={<UsersLayout />} />
-                    </Route>
-                    {/* public */}
-                    <Route path="account/*" element={<AccountLayout />} />
-                    <Route path="*" element={<Navigate to="/" />} />
-                </Routes>
-            </div>
+            <LeftAside />
+            <Main />
+            <RightAside />
+            <Footer />
         </div>
     );
 }

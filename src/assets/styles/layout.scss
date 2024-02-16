@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+@import 'basics/variables';
+@import 'mixins/setRem';
+
+$TopHight : 70px; // header 높이
+$LayoutZindex : 70; // header 높이
+
+
+.wrapper,
+.app-container {
+    height: calc(100vh - 30px);
+    min-height: calc(100vh - 30px);
+}
+
+/* Top start */
+.top-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: $TopHight;
+    padding: rem(20);
+    background-color: #FFF;
+    z-index: $LayoutZindex;
+
+    .symbol {
+        font-size: rem(18);
+        font-weight: 400;
+    }
+}
+
+/* Top end */
+
+/* Left aside start */
+.navigation-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 280px;
+    height: calc(100vh - $TopHight);
+    padding: 20px;
+    background-color: aliceblue;
+    z-index: $LayoutZindex;
+}
+
+/* Left aside end */
+
+/* Right aside start */
+.aside-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 280px;
+    height: calc(100vh - $TopHight);
+    padding: 20px;
+    background-color: aliceblue;
+    z-index: $LayoutZindex;
+}
+
+/* Left aside end */
+
+/* Main start */
+.main-container {
+    padding: 40px 0 40px;
+    height: 100%;
+}
+
+/* Main end */
+
+/* Footer start */
+.footer-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    height: 30px;
+
+    p {
+        font-size: rem(14);
+    }
+}
+
+/* Footer end */
