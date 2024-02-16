@@ -3,8 +3,6 @@
 @import 'basics/variables';
 @import 'mixins/setRem';
 
-$TopHight : 70px; // header 높이
-$LayoutZindex : 70; // header 높이
 
 
 .wrapper,
@@ -41,7 +39,7 @@ $LayoutZindex : 70; // header 높이
     bottom: 0;
     left: 0;
     width: 280px;
-    height: calc(100vh - $TopHight);
+    height: calc(100vh - #{$TopHight});
     padding: 20px;
     background-color: aliceblue;
     z-index: $LayoutZindex;
@@ -55,7 +53,7 @@ $LayoutZindex : 70; // header 높이
     bottom: 0;
     right: 0;
     width: 280px;
-    height: calc(100vh - $TopHight);
+    height: calc(100vh - #{$TopHight});
     padding: 20px;
     background-color: aliceblue;
     z-index: $LayoutZindex;
