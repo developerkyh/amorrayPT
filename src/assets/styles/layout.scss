@@ -3,8 +3,6 @@
 @import 'basics/variables';
 @import 'mixins/setRem';
 
-
-
 .wrapper,
 .app-container {
     height: calc(100vh - 30px);
@@ -39,10 +37,14 @@
     bottom: 0;
     left: 0;
     width: 280px;
-    height: calc(100vh - #{$TopHight});
-    padding: 20px;
-    background-color: aliceblue;
-    z-index: $LayoutZindex;
+    height: 100%;
+    padding: 70px 20px 0;
+
+    .left-nav-area {
+        display: flex;
+        flex-flow: column wrap;
+        padding-top: 20px;
+    }
 }
 
 /* Left aside end */
@@ -53,17 +55,21 @@
     bottom: 0;
     right: 0;
     width: 280px;
-    height: calc(100vh - #{$TopHight});
-    padding: 20px;
-    background-color: aliceblue;
-    z-index: $LayoutZindex;
+    height: 100%;
+    padding: 70px 20px 0;
+
+    .right-nav-area {
+        display: flex;
+        flex-flow: column wrap;
+        padding-top: 20px;
+    }
 }
 
 /* Left aside end */
 
 /* Main start */
 .main-container {
-    padding: 40px 0 40px;
+    padding: 70px 0 40px;
     height: 100%;
 }
 
